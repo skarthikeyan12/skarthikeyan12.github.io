@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFile.css') }}"/>
+</head>
+<body>
+    <h1>See Realtors Past Showings</h1>
+    <table border='1'>
+        <thead>
+            <tr>
+                <th>Realtor ID</th>
+                <th>Property Count</th>
+                <th>Property ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for realtor in realtor_data %}
+                <tr>
+                    <td>{{ realtor[0] }}</td>
+                    <td>{{ realtor[1] }}</td>
+                    <td>{{ realtor[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

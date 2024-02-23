@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Property Information</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFile.css') }}"/>
+  </head>
+  <body style='background-color:#EBACDE'>
+    <h1>Property Information</h1>
+    <form method='POST'>
+        <h2>Property Chart</h2>
+        <input type="submit" value='Generate Chart', name="find_property"/>
+        <h2>Properties</h2>
+    </form>
+    {% if property_info %}
+        <table border='1'>
+            <thead>
+                <tr>
+                    <th>Property ID</th>
+                    <th>Property Type</th>
+                    <th>Price</th>
+                    <th>Total Square Footage</th>
+                    <th>Beds</th>
+                    <th>Baths</th>
+                    <th>Monthly Cost</th>
+                    <th>Unit #</th>
+                    <th>Number</th>
+                    <th>Street</th>
+                    <th>Zipcode</th>
+                </tr>
+                </thead>
+            <tbody>
+                {% for property in property_info %}
+                    <tr>
+                        <td>{{ property[0] }}</td>
+                        <td>{{ property[1] }}</td>
+                        <td>{{ property[2] }}</td>
+                        <td>{{ property[3] }}</td>
+                        <td>{{ property[4] }}</td>
+                        <td>{{ property[5] }}</td>
+                        <td>{{ property[6] }}</td>
+                        <td>{{ property[7] }}</td>
+                        <td>{{ property[8] }}</td>
+                        <td>{{ property[9] }}</td>
+                        <td>{{ property[10] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+</body>
+</html>

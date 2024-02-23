@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Property Types</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFile.css') }}"/>
+  </head>
+  <body style='background-color:#EBACDE'>
+    <h1>Property Types</h1>
+    <form method='POST' action='/find_property'>
+        <label for="property_type">Property Types:</label>
+        <select name="property_type" id="property_type">
+            <option value="P">Penthouse</option>
+            <option value="C">Condo</option>
+            <option value="MF">Multi-Family</option>
+            <option value="H">House</option>
+        </select>
+        <input type="submit" value='See Properties' name="find_property"/>
+    </form>
+
+    {% if property_info %}
+        <table border='1'>
+            <thead>
+                <tr>
+                    <th>Property ID</th>
+                    <th>Property Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for property in property_info %}
+                    <tr>
+                        <td>{{ property[0] }}</td>
+                        <td>{{ property[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+  </body>
+</html>

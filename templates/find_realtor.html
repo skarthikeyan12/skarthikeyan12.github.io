@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Realtors</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFile.css') }}"/>
+</head> 
+<body style='background-color:#EBACDE'>
+    <h1>Realtor Information</h1>
+    <table border="1">
+        <tr>
+            <th>Realtor Unique Code</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h1>See Realtors Past Showings</h1>
+    <form method='POST'>
+        <label>Realtor Unique Code:</label>
+        <input type="checkbox" name="realtor_id" value='21'>21
+        <input type="checkbox" name="realtor_id" value='22'>22
+        <input type="checkbox" name="realtor_id" value='23'>23
+        <input type="checkbox" name="realtor_id" value='24'>24
+        <input type="checkbox" name="realtor_id" value='25'>25
+        <input type="checkbox" name="realtor_id" value='26'>26
+        <input type="checkbox" name="realtor_id" value='27'>27
+        <input type="checkbox" name="realtor_id" value='28'>28
+        <input type="checkbox" name="realtor_id" value='29'>29
+        <br>
+        <input type="submit" value="See Realtors Past Showings" name="submit">
+        <input type="reset" name="Clear" value="Clear">
+    </form>
+    {% if realtor_data %}
+        <table border='1'>
+            <thead>
+            <tr>
+                <th>Realtor ID</th>
+                <th>Property Count</th>
+                <th>Property ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for realtor in realtor_data %}
+                <tr>
+                    <td>{{ realtor[0] }}</td>
+                    <td>{{ realtor[1] }}</td>
+                    <td>{{ realtor[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+</html>

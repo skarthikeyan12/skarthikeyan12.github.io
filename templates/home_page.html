@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Project 03</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFile.css') }}"/>
+</head>
+<body style='background-color:#EB92B2'>
+    <h1><i><u>Welcome to EliteEdge Realty DB</u></i></h1>
+    <img src='static/skyline.png' title='skyline' align = 'center' width="850" height='275'/>
+    
+    <ul>
+        <tr>
+            <table border = '1'>
+        <tr>
+        <tr>
+            <td><a href="{{ url_for('find_property') }}">Look at our Property Types</a></td>
+            <td><a href="{{ url_for('see_listings') }}">Current Listings</a></td>
+            <td><a href="{{ url_for('add_property') }}">Have a Property to Rent or Sell?</a></td>
+            <td><a href="{{ url_for('add_amentity') }}">Amenities</a></td>
+            <td><a href="{{ url_for('find_realtor') }}">Realtors</a></td>
+        </tr>
+    </table>
+    </ul>
+</body>
+</html>

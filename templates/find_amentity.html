@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Amentities</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFile.css') }}"/>
+        <style>     
+                body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                }
+        
+                .image-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+        
+                .image-container img {
+                    margin: 5px; /* Optional: Add some margin between the images */
+                }
+                
+                form {
+                    text-align: center;
+                }
+        </style>
+    </head>
+    <body style='background-color:#EBACDE'>
+        <h1><b><u>Amenities</b></u></h1>
+        <div class='image-container'>
+            <img src='static/gym.png' alt='Gym' width='200px' height='200px' text-align='center'>
+            <img src='static/indoorpool.png' alt='Pool' width='200px' height='200px' text-align='center'>
+            <img src='static/concierge.png' alt='Concierge'width='200px' height='200px' text-align='center'>
+            <img src='static/rooftop.png' alt='Rooftop'width='200px' height='200px' text-align='center'>
+        </div>
+        <h2><u>Amentity Chart</u></h2>
+        <form method='POST'>
+            <input type="submit" value='Generate Chart', name="find_amentity"/>
+        <h2><u>Additional Amentities you're Looking For?</u></h2>
+            <label>Amentity:</label>
+                <input type="text" name="amentity_name">
+                <input type="submit" value="Add Amentity", name="add_amentity">
+                <input type="reset" name="Clear" value="Clear"/>
+        </form>
+    </body>
+</html>

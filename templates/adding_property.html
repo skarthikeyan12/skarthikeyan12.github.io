@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Add Property</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cssFile.css') }}"/>
+        <style>
+            body {
+                color: white;
+            }
+        </style>
+    </head>
+    <body style='background-color:#EBACDE'>
+        <h1><u>Add Property</u></h1>
+        <form method="POST">
+            <label>Property Type:</label>
+            <input type="radio" name="property_type" value="MF">
+            Multi-Family
+            <input type="radio" name="property_type" value="P">
+            Penthouse
+            <input type="radio" name="property_type" value="C">
+            Condo
+            <input type="radio" name="property_type" value="H">
+            House
+            <br>
+            <br>
+            <label>Property Price</label>
+            <input type="text" name="property_price">
+            <br>
+            <br>
+            <label>Property Square Footage:</label>
+            <input type="text" name="property_square_footage">
+            <br>
+            <br>
+            <label>Number of Beds:</label>
+            <input type="text" name="property_bed">
+            <br>
+            <br>
+            <label>Number of Baths:</label>
+            <input type="text" name="property_bath">
+            <br>
+            <br>
+            <label>Monthly Cost:</label>
+            <input type="text" name="monthly_cost">
+            <br>
+            <br>
+        <h3><u>Property Address:</u></h3>
+        <form method="POST">
+            <label>Property Unit:</label>
+            <input type="text" name="property_unit">
+            <br>
+            <br>
+            <label>Property Number:</label>
+            <input type="text" name="property_number">
+            <br>
+            <br>
+            <label>Street Address:</label>
+            <input type="text" name="property_street">
+            <br>
+            <br>
+            <label>Zip Code:</label>
+            <input type="text" name="property_zipcode">
+            <br>
+            <br>
+            <input type="submit" value="Add Property">
+            <input type="reset" name="Clear" value="Clear">
+        </form>
+    </body>
+</html>
